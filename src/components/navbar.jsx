@@ -49,11 +49,11 @@ const Navbar = ({ theme, setTheme }) => {
   return (
     <>
       <nav
-        className={`bg-gradient-to-r ${
+        className={`fixed top-0 left-0 w-full z-50 bg-gradient-to-r ${
           theme === "dark"
             ? "from-[#610C9F] via-[#DA0C81] to-[#ffd900]"
             : "from-[#BB9FDC] via-[#F0BBD9] to-[#F2D8A7]"
-        } w-full z-60 py-1 relative`}
+        }`}
       >
         {/* MAIN CONTAINER */}
         <div className="flex justify-between items-center p-4 sm:p-2">
@@ -103,20 +103,21 @@ const Navbar = ({ theme, setTheme }) => {
           </div>
         </div>
 
-        {showMenu && (
+        <div className="sm:hidden">
+          {showMenu && (
           <div
-            className={`bg-gradient-to-r ${
+            className={`min-h-[300px] flex items-center justify-center text-center  bg-gradient-to-r ${
               theme === "dark"
                 ? "from-[#610C9F] via-[#DA0C81] to-[#ffd900]"
                 : "from-[#BB9FDC] via-[#F0BBD9] to-[#F2D8A7]"
-            } fixed top-16 left-0 right-0 z-50 py-4 sm:hidden`}
+            }`}
           >
             <ul className="flex flex-col items-center gap-4">
               {navMenus.map((menu) => (
                 <li key={menu.name}>
                   <Link
                     to={menu.link}
-                    className={`text-xl font-semibold px-4 py-4 md:py-6 inline-block ${
+                    className={`text-xl font-semibold px-4 py-2 md:py-6 inline-block ${
                       theme === "dark"
                         ? "text-white hover:text-[#251435]"
                         : "text-[#8F669F] hover:text-[#5c2670]"
@@ -129,6 +130,7 @@ const Navbar = ({ theme, setTheme }) => {
             </ul>
           </div>
         )}
+        </div>      
       </nav>
     </>
   );

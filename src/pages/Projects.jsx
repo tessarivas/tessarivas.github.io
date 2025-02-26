@@ -2,7 +2,7 @@ import React from 'react';
 
 const Projects = () => {
     return (
-        <div>
+        <div className='pt-16'>
             <h1>Projects</h1>
             <section class="bg-white dark:bg-gray-900">
                 <div class="container px-6 py-10 mx-auto">

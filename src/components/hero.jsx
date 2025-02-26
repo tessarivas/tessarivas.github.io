@@ -1,7 +1,7 @@
 const Hero = ({ theme }) => {
   return (
     <section
-      className={`min-h-[300px] flex items-center justify-center text-center ${
+      className={`min-h-[300px] flex items-center justify-center text-center pt-16 ${
         theme === "dark"
           ? "bg-gradient-to-r from-[#610C9F] via-[#DA0C81] to-[#ffd900]"
           : "bg-gradient-to-r from-[#BB9FDC] via-[#F0BBD9] to-[#F2D8A7]"
